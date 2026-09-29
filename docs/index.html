@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#382537">
+  <meta name="description" content="Confirme sua presença nos quinze anos de Maria Clara, em 31 de outubro de 2026.">
+  <title>Maria Clara | 15 anos</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://images.unsplash.com">
+  <link rel="stylesheet" href="./styles.css">
+  <script src="./config.js"></script>
+  <script src="./site.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+<header class="site-header">
+  <a class="brand" href="#inicio" aria-label="Maria Clara, quinze anos">
+    <span class="brand-mark" aria-hidden="true">MC</span>
+    <span class="brand-copy"><strong>Maria Clara</strong><span>15 anos</span></span>
+  </a>
+  <a class="header-link" href="#rsvp">Confirmar presença</a>
+</header>
+
+<main id="conteudo">
+  <section class="hero" id="inicio" aria-labelledby="titulo-principal">
+    <div class="hero-copy">
+      <p class="eyebrow">Uma noite de princesa</p>
+      <h1 id="titulo-principal">Maria <span>Clara</span></h1>
+      <p class="hero-subtitle">Um baile de princesa, feito de sonho e alegria.</p>
+      <p class="hero-date">31 de outubro de 2026 · 20 horas</p>
+      <div class="hero-actions">
+        <a class="button-primary" href="#rsvp">Confirmar presença</a>
+        <a class="hero-more" href="#detalhes">Ver detalhes</a>
+      </div>
+    </div>
+    <div class="hero-photo">
+      <img src="https://images.unsplash.com/photo-1696842234122-7c731309b6af?auto=format&amp;fit=crop&amp;w=1800&amp;q=85" alt="Castelo de Neuschwanstein no alto de uma colina verde, na Baviera" fetchpriority="high">
+      <div class="photo-caption">Foto de <a href="https://unsplash.com/@idbronskiy" target="_blank" rel="noopener noreferrer">Ilia Bronskiy</a> / Unsplash</div>
+    </div>
+  </section>
+
+  <section class="event-strip" id="detalhes" aria-label="Detalhes da festa">
+    <div class="event-item"><span class="event-label">Quando</span><span class="event-value">Sábado, 31 de outubro</span></div>
+    <div class="event-item"><span class="event-label">Horário</span><span class="event-value">Às 20 horas</span></div>
+    <div class="event-item"><span class="event-label">Onde</span><span class="event-value">Buffet Castelo Diamante</span></div>
+  </section>
+
+  <section class="invitation" aria-labelledby="convite-titulo">
+    <p class="section-kicker">Com carinho, para você</p>
+    <h2 id="convite-titulo">Sua presença torna tudo mais especial.</h2>
+    <div class="ornament" aria-hidden="true">✦</div>
+    <p>Maria Clara espera você para celebrar seus 15 anos em uma noite feita de sonhos, alegria e momentos para guardar no coração.</p>
+  </section>
+
+  <section class="rsvp-section" id="rsvp" aria-labelledby="rsvp-titulo">
+    <div class="rsvp-layout">
+      <div class="rsvp-heading">
+        <p class="section-kicker">31 · 10 · 2026</p>
+        <h2 id="rsvp-titulo">Você vem celebrar?</h2>
+        <p>Será uma alegria ter você com a gente. Confirme sua presença pelo formulário abaixo.</p>
+        <div class="countdown" aria-live="polite"><strong id="dias-restantes">--</strong><span>dias para a festa</span></div>
+      </div>
+
+      <div>
+        <div class="form-alert" id="rsvp-status" role="status" hidden></div>
+        <form class="rsvp-form" id="rsvp-form" method="post" target="rsvp-response" novalidate>
+          <div class="form-field">
+            <label for="nome">Seu nome completo</label>
+            <input id="nome" name="nome" type="text" maxlength="120" autocomplete="name" placeholder="Como devemos chamar você?" required>
+          </div>
+          <fieldset class="form-field attendance-fieldset">
+            <legend class="field-label">Você poderá comparecer?</legend>
+            <div class="presence-options">
+              <div class="presence-option"><input id="presenca-sim" type="radio" name="presenca" value="sim" checked><label for="presenca-sim">Sim, estarei lá</label></div>
+              <div class="presence-option"><input id="presenca-nao" type="radio" name="presenca" value="nao"><label for="presenca-nao">Não poderei ir</label></div>
+            </div>
+          </fieldset>
+          <div class="form-field companions-field" id="campo-acompanhantes">
+            <label for="acompanhantes">Acompanhantes além de você</label>
+            <select id="acompanhantes" name="acompanhantes">
+              <option value="0">Somente eu</option>
+              <option value="1">1 acompanhante</option>
+              <option value="2">2 acompanhantes</option>
+              <option value="3">3 acompanhantes</option>
+              <option value="4">4 acompanhantes</option>
+              <option value="5">5 acompanhantes</option>
+              <option value="6">6 acompanhantes</option>
+            </select>
+          </div>
+          <div class="honeypot" aria-hidden="true"><label for="website">Deixe este campo vazio</label><input id="website" name="website" type="text" tabindex="-1" autocomplete="off"></div>
+          <button class="submit-button" id="rsvp-submit" type="submit">Enviar confirmação</button>
+          <p class="form-note">Sua resposta será usada somente para organizar a recepção da festa.</p>
+        </form>
+        <iframe class="response-frame" name="rsvp-response" id="rsvp-response" title="Resultado da confirmação" tabindex="-1"></iframe>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <p>Com carinho, família Rampin Rovay</p>
+  <p><a href="./lista.html">Lista de presença</a> <span class="footer-mark" aria-hidden="true">✦</span></p>
+</footer>
+</body>
+</html>
